@@ -58,12 +58,12 @@ AS_CASE([$host], [sparc-*-solaris2*], [AC_CHECK_LIB(mtmalloc, malloc)])
 AC_ARG_ENABLE([fhs],[AS_HELP_STRING([--disable-fhs],
 	[Do Not follow the FHS when placing files and directories (default only when not specifying prefix])],[enable_fhs="$enableval"],[enable_fhs="yes"])
 
-AC_PREFIX_DEFAULT(/usr/local/agnocon)
+AC_PREFIX_DEFAULT(/usr/local/agnoconnect)
 # AC_PREFIX_DEFAULT does not get expanded until too late so we need to do this to use prefix in this script
 
 if test "x$prefix" = "xNONE" ; then
     enable_fhs=no
-    prefix='/usr/local/agnocon'
+    prefix='/usr/local/agnoconnect'
 fi
 
 if test "x${exec_prefix}" = "xNONE" ; then
