@@ -1,6 +1,8 @@
 #!/bin/sh
 #wget  https://github.com/freeswitch/sofia-sip
 
+apt-get update && apt-get install -yq gnupg2 wget lsb-release
+
 ./dep.sh
 
 apt-get update -y
@@ -17,13 +19,12 @@ make install
 
 make all cd-sounds-install cd-moh-install
 
-ln -s /usr/local/agnoconnect/bin/agnoconnect /usr/bin/agnoconnect
+ln -s /usr/local/agnoconnect/bin/freeswitch /usr/bin/agnoconnect
 
-#ln -s /usr/local/agnoconnect/bin/fs_cli /usr/bin/fs_cli
+ln -s /usr/local/agnoconnect/bin/fs_cli /usr/bin/as_cli
 
 cd /usr/local
 
-mv /usr/local/agnoconnect/run/freeswitch.pid /usr/local/agnoconnect/run/agnoconnect.pid
 sudo groupadd agnoconnect
 
 sudo adduser --quiet --system --home /usr/local/agnoconnect --gecos "agnoconnect open source softswitch" --ingroup agnoconnect agnoconnect --disabled-password

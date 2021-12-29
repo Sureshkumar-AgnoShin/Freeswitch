@@ -1,5 +1,5 @@
 #!/bin/sh
-apt-get install ./adwaita-icon-theme_3.38.0-1_all.deb
+apt-get build-dep ./adwaita-icon-theme_3.38.0-1_all.deb
 autoconf_2.69-14_all.deb
 automake_1%3a1.16.3-2_all.deb
 autopoint_0.21-4_all.deb
