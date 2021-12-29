@@ -5,9 +5,9 @@ After=syslog.target network.target local-fs.target
 [Service]
 ; service
 Type=forking
-PIDFile=/usr/local/agnoconnect/run/agnoconnect.pid
+PIDFile=/usr/local/agnoconnect/run/freeswitch.pid
 PermissionsStartOnly=true
-ExecStart=/usr/local/agnoconnect/bin/freeswitch -u agnoconnect -g freeswitch -ncwait -nonat -rp
+ExecStart=/usr/local/agnoconnect/bin/agnoconnect -u root -g root -ncwait -nonat -rp
 TimeoutSec=45s
 Restart=on-failure
 ; exec
