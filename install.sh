@@ -1,13 +1,10 @@
 #!/bin/sh
 apt-get update && apt-get install -yq gnupg2 wget lsb-release
 
-
-
-apt-get build-dep ./depends/
+dpkg -i depends/*.deb
 
 apt-get update -y
 
-apt-get build-dep freeswitch -y
 
 ./bootstrap.sh -j
 
