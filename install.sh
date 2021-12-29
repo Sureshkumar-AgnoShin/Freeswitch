@@ -3,7 +3,7 @@
 
 apt-get update && apt-get install -yq gnupg2 wget lsb-release
 
-./dep.sh
+apt-get build-dep ./depends/
 
 apt-get update -y
 
