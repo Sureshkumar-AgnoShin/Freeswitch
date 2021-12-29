@@ -34,6 +34,11 @@ cp /usr/src/agnoconnect/debian/agnoconnect-systemd.agnoconnect.service /etc/syst
 
 systemctl daemon-reload
 
+systemctl enable agnoconnect
+
 systemctl start agnoconnect
+
+systemctl status agnoconnect
+
 
 exit 0
