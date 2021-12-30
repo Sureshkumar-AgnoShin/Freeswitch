@@ -12,7 +12,8 @@
 
        WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
   -->
-  <X-PRE-PROCESS cmd="set" data="default_password=1234"/>
+ <X-PRE-PROCESS cmd="set" data="dbconnection=pgsql://hostaddr=127.0.0.1 dbname=AgnoConnect user=postgres password='Admin@123'  connect_timeout=30"/>
+ <X-PRE-PROCESS cmd="set" data="dbconnectioncdr=host=127.0.0.1  dbname=AgnoConnect  user=postgres  password=Admin@123  connect_timeout=30"/>
   <!-- Did you change it yet? -->
   <!--
       The following variables are set dynamically - calculated if possible by freeswitch - and
@@ -256,8 +257,8 @@
        127 - BV32
 
   -->
-  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
-  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=G722,PCMU,PCMA"/>
 
   <!--
       xmpp_client_profile and xmpp_server_profile
@@ -298,7 +299,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
+  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=$${local_ip_v4}"/>
 
   <!-- external_sip_ip
       Used as the public IP address for SDP.
@@ -311,7 +312,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:stun.freeswitch.org"/>
+  <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=$${local_ip_v4}"/>
 
   <!-- unroll-loops
        Used to turn on sip loopback unrolling.

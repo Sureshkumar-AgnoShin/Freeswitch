@@ -1,14 +1,17 @@
 #!/bin/sh
 apt-get update && apt-get install -yq gnupg2 wget lsb-release
 
-dpkg -i depends/*.deb
+cd depends
+
+dpkg -i /*.deb
+
+cd ..
 
 apt-get update -y
 
-
 ./bootstrap.sh -j
 
-./configure
+./configure --enable-core-pgsql-support
 
 make
 
