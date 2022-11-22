@@ -12,8 +12,8 @@
 
        WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
   -->
- <X-PRE-PROCESS cmd="set" data="dbconnection=pgsql://hostaddr=127.0.0.1 dbname=AgnoConnect user=postgres password='Admin@123'  connect_timeout=30"/>
- <X-PRE-PROCESS cmd="set" data="dbconnectioncdr=host=127.0.0.1  dbname=AgnoConnect  user=postgres  password=Admin@123  connect_timeout=30"/>
+ <X-PRE-PROCESS cmd="set" data="dbconnection=pgsql://hostaddr=127.0.0.1 dbname=agnocon user=Agnocon password='Agn0c0n@123'  connect_timeout=30"/>
+ <X-PRE-PROCESS cmd="set" data="dbconnectioncdr=host=127.0.0.1  dbname=agnocon  user=Agnocon  password=Agn0c0n@123  connect_timeout=30"/>
   <!-- Did you change it yet? -->
   <!--
       The following variables are set dynamically - calculated if possible by freeswitch - and
